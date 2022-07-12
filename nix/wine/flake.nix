@@ -13,16 +13,8 @@
       stdenv.mkDerivation rec {
         name = "wine-7.12";
         version = "7.12";
-        #configureFlags = ["--enable-win64" "--without-freetype"];
-        #buildInputs = [flex xorg.libX11 bison];
         buildInputs = [xorg.libX11];
         src = ./wine64-7.12.tar.gz;
-        /*
-         src = pkgs.fetchurl {
-           url = "https://dl.winehq.org/wine/source/7.x/wine-7.12.tar.xz";
-           sha256 = "sha256-gJzsE3FmNubq/Uw9pzEkVqhE0xYCClV4YRvNuiEGnGg=";
-         };
-         */
         nativeBuildInputs = [
           autoPatchelfHook
         ];
