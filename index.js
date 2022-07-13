@@ -44,7 +44,6 @@ freeport((err, port) => {
     ]))
 
     window = new BrowserWindow({
-      title: "Monad Trade",
       width: 800,
       height: 600,
       show: false,

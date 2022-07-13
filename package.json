@@ -1,6 +1,6 @@
 {
   "private": true,
-  "productName": "monad-trade",
+  "productName": "Monad Trade",
   "version": "0.1.0.0",
   "dependencies": {
     "freeport": "^1.0.5",

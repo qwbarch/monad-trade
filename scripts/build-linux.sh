@@ -16,10 +16,14 @@ nix build
 echo $rootPassword | sudo -S cp -r node_modules ./result/bin/node_modules
 echo $rootPassword | sudo -S cp package.json ./result/bin/package.json
 echo $rootPassword | sudo -S cp index.js ./result/bin/index.js
+echo $rootPassword | sudo -S cp tray.png ./result/bin/tray.png
 
 # Create electron executable and archive it.
 cd ./result/bin # This is required to make electron-packager not bundle in our source files.
 echo $rootPassword | sudo -S $project_directory/node_modules/.bin/electron-packager --platform=linux --arch=x64 --overwrite --out=$project_directory/build --icon=$project_directory/logo-512x512.png .
 cd $project_directory/build
 echo $rootPassword | sudo -S chmod 777 .
+echo $rootPassword | sudo -S rm -rf ./monad-trade-linux-x64
+echo $rootPassword | sudo -S mv ./"Monad Trade-linux-x64" ./monad-trade-linux-x64
+echo $rootPassword | sudo -S mv ./monad-trade-linux-x64/"Monad Trade" ./monad-trade-linux-x64/monad-trade
 tar -czvf monad-trade-linux.tar.gz -C ./monad-trade-linux-x64 .
