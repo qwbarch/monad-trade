@@ -1,3 +1,3 @@
 #!/bin/bash
 cd ..
-nix develop --command hoogle server
+nix develop --command hoogle server --local
