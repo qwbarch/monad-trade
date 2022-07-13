@@ -17,6 +17,8 @@ echo $rootPassword | sudo -S cp -r node_modules ./result/bin/node_modules
 echo $rootPassword | sudo -S cp package.json ./result/bin/package.json
 echo $rootPassword | sudo -S cp index.js ./result/bin/index.js
 echo $rootPassword | sudo -S cp tray.png ./result/bin/tray.png
+echo $rootPassword | sudo -S mkdir -p ./result/bin/css
+echo $rootPassword | sudo -S cp node_modules/bulma/css/bulma.min.css ./result/bin/css/bulma.css
 
 # Create electron executable and archive it.
 cd ./result/bin # This is required to make electron-packager not bundle in our source files.
