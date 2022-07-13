@@ -4,7 +4,7 @@
 
 const argv = process.argv
 
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, Tray, Menu } = require('electron');
 const freeport = require('freeport');
 const spawn = require('child_process').spawn;
 const path = require('path');
@@ -23,25 +23,61 @@ freeport((err, port) => {
 
   const url = `http://localhost:${port}`;
   let child = null;
-  let win;
+  let window;
+  let tray;
+  let isQuitting = false;
 
   function createWindow() {
-    const windowStateKeeper = 
-    win = new BrowserWindow({
+    tray = new Tray(path.join(__dirname, "tray.png"));
+    tray.setContextMenu(Menu.buildFromTemplate([
+      {
+        label: "Options",
+        click: () => window.show()
+      },
+      {
+        label: "Quit",
+        click: () => {
+          isQuitting = true;
+          app.quit();
+        }
+      }
+    ]))
+
+    window = new BrowserWindow({
       title: "Monad Trade",
       width: 800,
       height: 600,
+      show: false,
       webPreferences: { nodeIntegration: true },
     });
-    win.removeMenu(true);
+    window.removeMenu(true);
 
     console.log(`Loading URL: ${url}`);
-    win.loadURL(url);
+    window.loadURL(url);
 
-    win.on('closed', () => {
-      win = null;
+    window.on("minimize", event => {
+      event.preventDefault();
+      window.hide();
     });
-  }
+
+    // BrowserWindow's closable attribute isn't implemented in Linux, so we'll have it minimize to tray instead.
+    window.on("close", event => {
+      if (!isQuitting) {
+        event.preventDefault();
+        window.hide();
+        event.returnValue = false;
+      }
+    })
+
+    window.on('closed', event => {
+      window = null;
+      tray = null;
+    });
+  };
+
+  app.on("before-quit", () => {
+    isQuitting = true;
+  });
 
   app.on('ready', () => {
     child = spawn(path.join(__dirname, relBin), [port]);
@@ -49,8 +85,7 @@ freeport((err, port) => {
     child.stderr.setEncoding('utf8');
     child.stdout.on('data', console.log);
     child.stderr.on('data', console.log);
-    child.on('close', code =>
-      console.log(`Threepenny app exited with code ${code}`));
+    child.on('close', code => console.log(`Threepenny app exited with code ${code}`));
 
     waitOn({ resources: [url], timeout }, (err_) => {
       if (err_) throw err_;
@@ -67,7 +102,7 @@ freeport((err, port) => {
   app.on('will-quit', () => child.kill());
 
   app.on('activate', () => {
-    if (win === null) {
+    if (window === null) {
       createWindow();
     }
   });
