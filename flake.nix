@@ -30,8 +30,8 @@
             src = ./.;
             inherit index-state compiler-nix-name;
 
-            plan-sha256 = "01prq01dkkr1x548s1ax2p79apycb99njwgp6hccj26k7kgqag27";
-            materialized = ./materialized + "/${projectName}";
+            #plan-sha256 = "";
+            #materialized = ./materialized + "/${projectName}";
           };
 
         overlays = [
@@ -49,26 +49,26 @@
         tools = {
           cabal = {
             inherit index-state;
-            plan-sha256 = "1fskb4vnd71mnavywri2ayyr1plr9xcvpkqsw3ymhihv8dxj3mpi";
-            materialized = ./materialized/cabal;
+            #plan-sha256 = "";
+            #materialized = ./materialized/cabal;
           };
 
           haskell-language-server = {
             inherit index-state;
-            plan-sha256 = "15b6k65r1gqrm1gnpkqqk7ga6401s8263952w6s6pnyrpcw9mbl2";
-            materialized = ./materialized/haskell-language-server;
+            #plan-sha256 = "";
+            #materialized = ./materialized/haskell-language-server;
           };
 
           hoogle = {
             inherit index-state;
-            plan-sha256 = "1shwlhl03qnzax31dhn8frak6qfk9gcgvjz2mcl0797bvxxhxssg";
-            materialized = ./materialized/hoogle;
+            #plan-sha256 = "";
+            #materialized = ./materialized/hoogle;
           };
 
           ghcid = {
             inherit index-state;
-            plan-sha256 = "0gf7c46bzvar9qisgv6in7bjga3xc27sy2xf1msf8mg5kgzg0197";
-            materialized = ./materialized/hoogle;
+            #plan-sha256 = "";
+            #materialized = ./materialized/ghcid;
           };
         };
 

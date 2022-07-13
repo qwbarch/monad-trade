@@ -2,9 +2,11 @@
   pkgs = hackage:
     {
       packages = {
+        "happy".revision = (((hackage."happy")."1.20.0").revisions).default;
         "streaming-commons".revision = (((hackage."streaming-commons")."0.2.2.4").revisions).default;
         "streaming-commons".flags.use-bytestring-builder = false;
         "pretty".revision = (((hackage."pretty")."1.1.3.6").revisions).default;
+        "haskell-src-exts".revision = (((hackage."haskell-src-exts")."1.23.1").revisions).default;
         "regex-posix".revision = (((hackage."regex-posix")."0.96.0.1").revisions).default;
         "regex-posix".flags._regex-posix-clib = false;
         "network-uri".revision = (((hackage."network-uri")."2.6.4.1").revisions).default;
@@ -16,6 +18,10 @@
         "HUnit".revision = (((hackage."HUnit")."1.6.2.0").revisions).default;
         "dlist".revision = (((hackage."dlist")."1.0").revisions).default;
         "dlist".flags.werror = false;
+        "string-interpolate".revision = (((hackage."string-interpolate")."0.3.1.2").revisions).default;
+        "string-interpolate".flags.bytestring-builder = false;
+        "string-interpolate".flags.text-builder = false;
+        "string-interpolate".flags.extended-benchmarks = false;
         "text".revision = (((hackage."text")."1.2.5.0").revisions).default;
         "threepenny-gui".revision = (((hackage."threepenny-gui")."0.9.1.0").revisions).default;
         "threepenny-gui".flags.buildexamples = false;
@@ -36,6 +42,7 @@
         "comonad".flags.distributive = true;
         "comonad".flags.indexed-traversable = true;
         "base-compat".revision = (((hackage."base-compat")."0.12.1").revisions).default;
+        "string-conversions".revision = (((hackage."string-conversions")."0.4.0.1").revisions).default;
         "snap-server".revision = (((hackage."snap-server")."1.1.2.0").revisions).default;
         "snap-server".flags.portable = false;
         "snap-server".flags.build-pong = false;
@@ -51,6 +58,7 @@
         "contravariant".flags.statevar = true;
         "base-compat-batteries".revision = (((hackage."base-compat-batteries")."0.12.1").revisions).default;
         "safe".revision = (((hackage."safe")."0.3.19").revisions).default;
+        "th-lift-instances".revision = (((hackage."th-lift-instances")."0.1.19").revisions).default;
         "Cabal".revision = (((hackage."Cabal")."3.4.1.0").revisions).default;
         "assoc".revision = (((hackage."assoc")."1.0.2").revisions).default;
         "websockets-snap".revision = (((hackage."websockets-snap")."0.10.3.1").revisions).default;
@@ -84,6 +92,7 @@
         "attoparsec".flags.developer = false;
         "th-compat".revision = (((hackage."th-compat")."0.1.3").revisions).default;
         "filepath".revision = (((hackage."filepath")."1.4.2.1").revisions).default;
+        "th-lift".revision = (((hackage."th-lift")."0.8.2").revisions).default;
         "SHA".revision = (((hackage."SHA")."1.6.4.4").revisions).default;
         "SHA".flags.exe = false;
         "stm".revision = (((hackage."stm")."2.5.0.0").revisions).default;
@@ -116,7 +125,10 @@
         "async".revision = (((hackage."async")."2.2.4").revisions).default;
         "async".flags.bench = false;
         "random".revision = (((hackage."random")."1.2.1.1").revisions).default;
+        "th-orphans".revision = (((hackage."th-orphans")."0.13.13").revisions).default;
         "process".revision = (((hackage."process")."1.6.13.2").revisions).default;
+        "utf8-string".revision = (((hackage."utf8-string")."1.0.2").revisions).default;
+        "base16-bytestring".revision = (((hackage."base16-bytestring")."1.0.2.0").revisions).default;
         "transformers-base".revision = (((hackage."transformers-base")."0.4.6").revisions).default;
         "transformers-base".flags.orphaninstances = true;
         "data-default-class".revision = (((hackage."data-default-class")."0.1.2.0").revisions).default;
@@ -134,6 +146,7 @@
         "data-default-instances-containers".revision = (((hackage."data-default-instances-containers")."0.0.1").revisions).default;
         "these".revision = (((hackage."these")."1.1.1.1").revisions).default;
         "these".flags.assoc = true;
+        "split".revision = (((hackage."split")."0.2.3.4").revisions).default;
         "base-orphans".revision = (((hackage."base-orphans")."0.8.6").revisions).default;
         "ghc-bignum".revision = (((hackage."ghc-bignum")."1.1").revisions).default;
         "time-compat".revision = (((hackage."time-compat")."1.9.6.1").revisions).default;
@@ -144,6 +157,7 @@
         "lifted-base".revision = (((hackage."lifted-base")."0.2.3.12").revisions).default;
         "clock".revision = (((hackage."clock")."0.8.3").revisions).default;
         "clock".flags.llvm = false;
+        "th-expand-syns".revision = (((hackage."th-expand-syns")."0.4.9.0").revisions).default;
         "rts".revision = (((hackage."rts")."1.0.2").revisions).default;
         "monad-control".revision = (((hackage."monad-control")."1.0.3.1").revisions).default;
         "semialign".revision = (((hackage."semialign")."1.2.0.1").revisions).default;
@@ -151,9 +165,13 @@
         "transformers".revision = (((hackage."transformers")."0.5.6.2").revisions).default;
         "template-haskell".revision = (((hackage."template-haskell")."2.17.0.0").revisions).default;
         "witherable".revision = (((hackage."witherable")."0.4.2").revisions).default;
+        "syb".revision = (((hackage."syb")."0.7.2.1").revisions).default;
+        "th-reify-many".revision = (((hackage."th-reify-many")."0.1.10").revisions).default;
         "data-default-instances-dlist".revision = (((hackage."data-default-instances-dlist")."0.0.1").revisions).default;
         "deepseq".revision = (((hackage."deepseq")."1.4.5.0").revisions).default;
         "unix".revision = (((hackage."unix")."2.7.2.2").revisions).default;
+        "text-conversions".revision = (((hackage."text-conversions")."0.3.1.1").revisions).default;
+        "haskell-src-meta".revision = (((hackage."haskell-src-meta")."0.8.10").revisions).default;
         "blaze-builder".revision = (((hackage."blaze-builder")."0.4.2.2").revisions).default;
         "readable".revision = (((hackage."readable")."0.3.1").revisions).default;
         "hashable".revision = (((hackage."hashable")."1.4.0.2").revisions).default;
@@ -219,15 +237,21 @@
       {
         packages = {
           "bytestring-builder".components.library.planned = lib.mkOverride 900 true;
+          "string-conversions".components.library.planned = lib.mkOverride 900 true;
+          "base16-bytestring".components.library.planned = lib.mkOverride 900 true;
           "transformers-base".components.library.planned = lib.mkOverride 900 true;
           "base-orphans".components.library.planned = lib.mkOverride 900 true;
+          "th-orphans".components.library.planned = lib.mkOverride 900 true;
           "threepenny-gui".components.library.planned = lib.mkOverride 900 true;
           "these".components.library.planned = lib.mkOverride 900 true;
           "monad-trade".components.tests."monad-trade-test".planned = lib.mkOverride 900 true;
+          "haskell-src-meta".components.library.planned = lib.mkOverride 900 true;
           "filepath".components.library.planned = lib.mkOverride 900 true;
+          "text-conversions".components.library.planned = lib.mkOverride 900 true;
           "data-default-instances-old-locale".components.library.planned = lib.mkOverride 900 true;
           "distributive".components.library.planned = lib.mkOverride 900 true;
           "pretty".components.library.planned = lib.mkOverride 900 true;
+          "utf8-string".components.library.planned = lib.mkOverride 900 true;
           "Cabal".components.library.planned = lib.mkOverride 900 true;
           "SHA".components.library.planned = lib.mkOverride 900 true;
           "bytestring".components.library.planned = lib.mkOverride 900 true;
@@ -257,13 +281,16 @@
           "data-default-class".components.library.planned = lib.mkOverride 900 true;
           "regex-base".components.library.planned = lib.mkOverride 900 true;
           "directory".components.library.planned = lib.mkOverride 900 true;
+          "happy".components.exes."happy".planned = lib.mkOverride 900 true;
           "time".components.library.planned = lib.mkOverride 900 true;
           "monad-trade".components.library.planned = lib.mkOverride 900 true;
           "network".components.library.planned = lib.mkOverride 900 true;
+          "string-interpolate".components.library.planned = lib.mkOverride 900 true;
           "StateVar".components.library.planned = lib.mkOverride 900 true;
           "data-default".components.library.planned = lib.mkOverride 900 true;
           "case-insensitive".components.library.planned = lib.mkOverride 900 true;
           "io-streams-haproxy".components.library.planned = lib.mkOverride 900 true;
+          "th-expand-syns".components.library.planned = lib.mkOverride 900 true;
           "snap-server".components.library.planned = lib.mkOverride 900 true;
           "websockets".components.library.planned = lib.mkOverride 900 true;
           "readable".components.library.planned = lib.mkOverride 900 true;
@@ -277,14 +304,18 @@
           "network-uri".components.library.planned = lib.mkOverride 900 true;
           "regex-posix".components.library.planned = lib.mkOverride 900 true;
           "base-compat-batteries".components.library.planned = lib.mkOverride 900 true;
+          "split".components.library.planned = lib.mkOverride 900 true;
           "contravariant".components.library.planned = lib.mkOverride 900 true;
           "zlib-bindings".components.library.planned = lib.mkOverride 900 true;
+          "syb".components.library.planned = lib.mkOverride 900 true;
           "text-short".components.library.planned = lib.mkOverride 900 true;
+          "haskell-src-exts".components.library.planned = lib.mkOverride 900 true;
           "entropy".components.library.planned = lib.mkOverride 900 true;
           "assoc".components.library.planned = lib.mkOverride 900 true;
           "process".components.library.planned = lib.mkOverride 900 true;
           "clock".components.library.planned = lib.mkOverride 900 true;
           "template-haskell".components.library.planned = lib.mkOverride 900 true;
+          "th-lift".components.library.planned = lib.mkOverride 900 true;
           "stm".components.library.planned = lib.mkOverride 900 true;
           "witherable".components.library.planned = lib.mkOverride 900 true;
           "semialign".components.library.planned = lib.mkOverride 900 true;
@@ -300,6 +331,7 @@
           "th-abstraction".components.library.planned = lib.mkOverride 900 true;
           "transformers".components.library.planned = lib.mkOverride 900 true;
           "OneTuple".components.library.planned = lib.mkOverride 900 true;
+          "th-lift-instances".components.library.planned = lib.mkOverride 900 true;
           "parsec".components.library.planned = lib.mkOverride 900 true;
           "deepseq".components.library.planned = lib.mkOverride 900 true;
           "primitive".components.library.planned = lib.mkOverride 900 true;
@@ -315,6 +347,7 @@
           "monad-control".components.library.planned = lib.mkOverride 900 true;
           "streaming-commons".components.library.planned = lib.mkOverride 900 true;
           "containers".components.library.planned = lib.mkOverride 900 true;
+          "th-reify-many".components.library.planned = lib.mkOverride 900 true;
           "time-compat".components.library.planned = lib.mkOverride 900 true;
           "aeson".components.library.planned = lib.mkOverride 900 true;
           "base-compat".components.library.planned = lib.mkOverride 900 true;

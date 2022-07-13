@@ -435,7 +435,7 @@
       },
       "locked": {
         "lastModified": 0,
-        "narHash": "sha256-+p7X/qOGA6uO6w7yHmKE8Gtbo42i5+wPgMEvm2ZDdgw=",
+        "narHash": "sha256-rgFkb04CJU0zLI+h09ll/D2BXzdH1ciNQFMqD8yZg7s=",
         "path": "./nix/wine",
         "type": "path"
       },

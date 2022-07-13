@@ -35,6 +35,8 @@
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
+          (hsPkgs."string-interpolate" or (errorHandler.buildDepError "string-interpolate"))
+          (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
           ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
         buildable = true;
         modules = [ "Lib" ];

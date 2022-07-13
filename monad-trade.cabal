@@ -13,9 +13,16 @@ library
     -fspecialise-aggressively
     -Wall
     -Wno-name-shadowing
+  extensions:
+    OverloadedStrings,
+    QuasiQuotes,
+    TypeApplications,
+    LambdaCase
   build-depends:
     base ^>= 4.15.1.0,
     threepenny-gui,
+    string-interpolate,
+    string-conversions
   
   if os(windows)
     build-depends: Win32

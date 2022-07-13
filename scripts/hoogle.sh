@@ -1,3 +1,3 @@
 #!/bin/bash
 cd ..
-nohup hoogle server --local &>/dev/null &
+nix develop --command hoogle server
