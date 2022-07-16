@@ -17,7 +17,7 @@ main = do
         section <- UI.new #. "section" # set UI.class_ "section"
 
         let header = UI.h1 #+ [string "Hello World!"] # set UI.class_ "title"
-            paragraph = UI.p #+ [string "My first website with Bulma!"] # set UI.class_ "subtitle"
+            paragraph = UI.p #+ [string "My first website with Bulma! Hello world!"] # set UI.class_ "subtitle"
             container = UI.div #+ [header, paragraph] # set UI.class_ "container"
 
         void $ getBody window #+ [element section #+ [container]]
