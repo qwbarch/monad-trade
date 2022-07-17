@@ -47,7 +47,7 @@ freeport((err, port) => {
       width: 800,
       height: 600,
       show: false,
-      webPreferences: { nodeIntegration: true },
+      webPreferences: { nodeIntegration: false },
     });
     window.removeMenu(true);
 
