@@ -2,13 +2,12 @@ module Lib where
 
 import Data.Foldable (traverse_)
 import Data.Functor (void)
-import Data.String.Interpolate (__i, i)
-import Graphics.UI.Threepenny (Config (..), addStyleSheet, defaultConfig, getBody, id_, set, startGUI, text, (#), (#+), (#.), debug)
-import qualified Graphics.UI.Threepenny as UI
-import Interface.Sidebar (sidebar)
+import Data.String.Interpolate (__i)
+import Graphics.UI.Threepenny (Config (..), addStyleSheet, defaultConfig, getBody, startGUI, (#+))
 import System.Environment (getArgs)
 import System.IO (BufferMode (..), hSetBuffering, stdout)
 import Text.Read (readMaybe)
+import Interface (interface)
 
 main :: IO ()
 main = do
@@ -21,20 +20,8 @@ main = do
                 "main",
                 "sidebar"
               ]
-            section =
-              UI.mkElement "section"
-                # set id_ "main-section"
-                #. "section columns"
-            container = UI.mkElement "main" #. "column" #+ [card]
-            card = UI.div # set id_ "main-card" #. "card" #+ [title, content]
-            title =
-              UI.div
-                #. "card-header"
-                #+ [UI.p # set id_ "main-title" #. "card-header-title" # set text "Audio"]
-            content = UI.div # set id_ "main-content" #. "card-content mr-3"
         traverse_ (addStyleSheet window . (<> ".css")) styleSheets
-        void $ getBody window #+ [section #+ [sidebar, container]]
-        debug [i|http://localhost:#{port}|]
+        void $ getBody window #+ [interface]
     _ ->
       putStrLn
         [__i|
