@@ -1,9 +1,6 @@
 html {
   /* Disable the default scroll-bar. */
   overflow: hidden;
-}
-
-body {
   background-color: #373052;
 }
 
@@ -43,6 +40,6 @@ body {
   height: 100%;
 }
 
-.title {
+#main-title {
   color: #ededed;
 }
