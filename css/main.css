@@ -1,6 +1,8 @@
 html {
   /* Disable the default scroll-bar. */
   overflow: hidden;
+  /* Disable text highlighting to feel more native. */
+  user-select: none;
   background-color: #373052;
 }
 

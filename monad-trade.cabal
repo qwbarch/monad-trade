@@ -7,7 +7,11 @@ library
   exposed-modules:
     Lib,
     Interface,
-    Interface.Sidebar
+    Interface.Sidebar,
+    Interface.Page.Audio,
+    Interface.Page.General,
+    Interface.Page.Hotkey,
+    Interface.Page.Macro
   hs-source-dirs: src
   ghc-options:
     -- -fplugin=Polysemy.Plugin
@@ -26,7 +30,8 @@ library
     base ^>= 4.15.1.0,
     threepenny-gui,
     string-interpolate,
-    string-conversions
+    string-conversions,
+    unliftio
   
   if os(windows)
     build-depends: Win32

@@ -4,10 +4,10 @@ import Data.Foldable (traverse_)
 import Data.Functor (void)
 import Data.String.Interpolate (__i)
 import Graphics.UI.Threepenny (Config (..), addStyleSheet, defaultConfig, getBody, startGUI, (#+))
+import Interface (interface)
 import System.Environment (getArgs)
 import System.IO (BufferMode (..), hSetBuffering, stdout)
 import Text.Read (readMaybe)
-import Interface (interface)
 
 main :: IO ()
 main = do
