@@ -17,7 +17,8 @@ library
     OverloadedStrings,
     QuasiQuotes,
     TypeApplications,
-    LambdaCase
+    LambdaCase,
+    ScopedTypeVariables
   build-depends:
     base ^>= 4.15.1.0,
     threepenny-gui,
