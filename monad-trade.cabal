@@ -4,7 +4,9 @@ version: 0.1.0.0
 license: MIT
 
 library
-  exposed-modules: Lib
+  exposed-modules:
+    Lib,
+    Interface.Sidebar
   hs-source-dirs: src
   ghc-options:
     -- -fplugin=Polysemy.Plugin

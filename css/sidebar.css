@@ -1,3 +1,7 @@
+#menu a.is-active {
+  background-color: #5c5484;
+}
+
 #sidebar-title {
   color: #ededed;
 }

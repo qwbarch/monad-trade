@@ -14,15 +14,18 @@ sidebar = sidebar #+ [title, menuList]
         #. "menu-label"
         # set text "Monad Trade"
     menuList =
-      UI.ul #. "menu-list"
-        #+ [ menuEntry "home" "General",
-             menuEntry "headphones-simple" "Audio",
-             menuEntry "keyboard" "Hotkeys",
-             menuEntry "code" "Macros"
+      UI.ul
+        # set id_ "menu"
+        #. "menu-list"
+        #+ [ menuEntry "home" "General" False,
+             menuEntry "headphones-simple" "Audio" True,
+             menuEntry "keyboard" "Hotkeys" False,
+             menuEntry "code" "Macros" False
            ]
-    itemLink children = UI.li #+ [UI.a #+ children]
+    itemLink children isActive =
+      UI.li #+ [UI.a #. (if isActive then "is-active" else mempty) #+ children]
     menuEntry (icon :: String) name =
       itemLink
         [ UI.span #. "icon sidebar-icon" #+ [UI.mkElement "i" #. [i|fa fa-#{icon}|]],
-          UI.span #. "menu-option sidebar-entry" # set text name
+          UI.span #. "sidebar-entry" # set text name
         ]

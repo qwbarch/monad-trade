@@ -29,6 +29,7 @@ echo $rootPassword | sudo -S mkdir -p $build_directory/static/css
 echo $rootPassword | sudo -S mkdir -p $build_directory/static/webfonts
 echo $rootPassword | sudo -S cp -a ./assets/css/. $build_directory/static/css
 echo $rootPassword | sudo -S cp -a ./assets/webfonts/. $build_directory/static/webfonts
+echo $rootPassword | sudo -S cp -a ./css/. $build_directory/static/css
 
 # Create electron executable.
 cd $build_directory
